@@ -1,0 +1,312 @@
+@import "bourbon";
+@import "my_reset";
+@import "variable";
+@import "../app/bower/susy/sass/susy";
+
+$susy: (
+	columns:15
+	);
+
+*::-webkit-input-placeholder
+{
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder
+{
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder
+{
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder
+{
+	color: #666;
+	opacity: 1;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+{
+	color: #666;
+}
+body input:required:valid,
+body textarea:required:valid
+{
+	color: #666
+}
+
+//Custom Styles Here
+
+.book
+{
+	background-image: url(img/book-bg.jpg);
+	background-size: cover;
+	background-position: center;
+
+	&__title
+	{
+		margin-top: 37px;
+		line-height: em(26px);
+	}
+	&__descr
+	{
+		margin-top: -10px;
+		line-height: em(21px);
+	}
+	
+
+	
+
+	.owl-item
+	{
+		
+	}
+	
+	&__slider
+	{
+		width: 693px;
+		margin: 0 auto;
+		margin-top: 30px;
+		
+		.owl-controls>.owl-buttons div:first-child
+		{
+			position: absolute;
+			left: -160px;
+			top:50%;
+			transform:translate(0,-50%);
+			width: 58px;
+			height: 87px;
+			background-image: url(img/arrow-left.png);
+			background-color: transparent;
+			opacity: 1;
+
+		}
+
+		.owl-controls>.owl-buttons div:last-child
+		{
+			position: absolute;
+			right: 0;
+			top:50%;
+			right: -160px;
+			transform:translate(0,-50%);
+			width: 58px;
+			height: 87px;
+			background-repeat: no-repeat;
+			background-color: transparent;
+			opacity: 1;
+			background-image: url(img/arrow-right.png);
+		}
+		.slide
+		{
+			position: relative;
+			overflow: hidden;
+			img
+			{
+				max-width:100%;
+				position: absolute;
+				bottom: -30px;
+				
+			}	
+
+			$border-color:#2a2e33;
+			&:nth-of-type(3n)
+			{
+				@include last;
+			}
+			
+			height: 215px;
+			margin: 9px;
+			border-radius: 50%;
+			border:2px solid $border-color;
+		}
+	}
+}
+
+.room-type-block
+{
+	background-image: url(img/room-type-bg.jpg);
+	padding-bottom: 60px;
+	padding-top: 35px;
+
+	&__title
+	{
+		margin-bottom: 25px;
+	}
+}
+
+
+.hotel-card
+{
+	margin-bottom: 35px;
+	position: relative;
+
+	&__photo
+	{
+		cursor: pointer;
+		img
+		{
+			width:100%;
+		}
+	}
+
+
+	&__title
+	{
+		font-weight: normal;
+		text-align: center;
+		margin-bottom: 2px;
+	}
+
+	&__descr
+	{
+		font-size: em(12px);
+		margin-bottom: 18px;
+	}
+
+	&__facilities-wrapper
+	{
+		text-align: center;
+
+		@each $icon in $room-icons-sprite 
+		{
+			.#{$icon}
+			{
+				background-position: $i 0;
+			}
+
+			$i:$i - 27px;
+
+		}
+
+	}
+
+	&__facilities
+	{
+		background-repeat: no-repeat;
+		background-image: url(img/facilities-sprites.png);
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.info
+{
+	background-color: $yellow-light;
+	font-family: #{$quick-r},sans-serif;
+	color:white;
+	position: relative;
+	padding-top: 39px;
+	padding-bottom: 30px;
+
+	h4
+	{
+		font-weight: normal;
+		font-size: em(48px);
+		line-height: em(18px);
+		text-transform: capitalize;
+		letter-spacing: 1px;
+
+	}
+
+	p
+	{
+		font-size: em(18px);
+		font-style: italic;
+	}
+
+	&__photo-wrapper
+	{
+		position: absolute;
+		right: 0;
+		bottom: -10px;
+	}
+}
+
+
+.page-footer
+{	
+	background-color: $color-theme;
+	color: white;
+	h5
+	{
+		font-weight: normal;
+		font-family: #{$quick-r},sans-serif;
+		margin-bottom: 12px;
+		margin-top: 15px;
+		font-size: em(18px);
+		text-transform: uppercase;
+	}
+
+	&__news
+	{
+		font-size: em(11px);
+		li
+		{
+			a
+			{
+				color: white;
+			}
+			span
+			{
+				display: block;
+				color: $yellow;
+			}
+			margin-bottom: 5px;
+		}
+	}
+
+	.btn
+	{
+		padding: 5px 25px;
+	}
+
+	p
+	{
+		font-family: #{$droid},sans-serif;
+		margin-bottom: 15px;
+		font-size: em(11px);
+	}
+}
+
+.footer-form
+{
+	label
+	{
+		font-size: em(12px);
+		display: block;
+	}
+
+	h5
+	{
+		margin-bottom: 7px;
+	}
+
+
+	input
+	{
+		background-color: transparent;
+		border: 1px solid #1f1f1f;
+		border-radius: 6px;
+		
+		margin-top: 6px;
+	}
+
+	input[type="password"]
+	{
+		margin-bottom: 7px;
+	}
+
+	.btn
+	{
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+
+
+}
+//ALWAYS END
+@import "media";

@@ -1,0 +1,8 @@
+@import "bourbon";
+ 
+@include font-face("RobotoRegular", "fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf);
+@include font-face("DroidSans", "fonts/DroidSans/DroidSans", $file-formats: eot woff ttf);
+@include font-face("QuicksandBold", "fonts/QuicksandBold/QuicksandBold", $file-formats: eot woff ttf);
+@include font-face("QuicksandRegular", "fonts/QuicksandRegular/QuicksandRegular", $file-formats: eot woff ttf);
+@include font-face("Ardecode", "fonts/Ardecode/Ardecode", $file-formats: eot woff ttf);
+@include font-face("QuicksandLight", "fonts/QuicksandLight/QuicksandLight", $file-formats: eot woff ttf);
